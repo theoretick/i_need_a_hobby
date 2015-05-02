@@ -1,0 +1,21 @@
+<html lang="en" data-framework="spine">
+    <head>
+        <meta charset="utf-8">
+        <title>I Need a Hobby</title>
+    </head>
+    <body>
+      <h1> I need a hobby </h1>
+    </body>
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        // $.get('https://gist.githubusercontent.com/theoretick/e96ccbf76f2f940a4528/raw/7483f4be3b5b42c7d76ce8287fd36a41fc3dc8c7/hobbies.toml', function (data) {
+            var data = '[hobbies]
+                        name = "piano"'
+            var config = TOML.parse(data);
+            console.log(config);
+        // });
+    </script>
+</html>
