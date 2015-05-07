@@ -2,23 +2,22 @@
     <head>
         <meta charset="utf-8">
         <title>i need a hobby</title>
-
-        <link rel="stylesheet" href="../bower_components/tablesaw/dist/tablesaw.css">
         <link href="css/style.css" rel="stylesheet">
     </head>
+
     <body>
         <div class="container">
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <h1><i class="fa fa-user-md"></i> i need a hobby</h1>
-                <p>... and i haven't found one yet, so i made a tool to help me out</p>
+                <p>... and i haven't found one yet, so i made a tool to help me out. try it out!</p>
 
                 <table id="hobby-list" class="compact hover order-column" data-tablesaw-sortable>
                     <thead>
                         <tr>
-                            <th>name</th>
-                            <th>tags</th>
-                            <th>notes</th>
+                            <th class="name-col">name</th>
+                            <th class="tags-col">tags</th>
+                            <th class="notes-col">notes</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,8 +39,8 @@
             <div class="col-md-5">
                 <br>
                 <p class="text-muted text-right">
-                    <a href="http://github.com/theoretick/i_need_a_hobby"><i class="fa fa-envelope-o"></i> submit some hobbies</a> --
-                    <a href="mailto:mail+i_need_a_hobby@lucascharles.me?subject=i_need_a_hobby%20Submission">repo <i class="fa fa-github"></i></a>
+                    <a href="mailto:mail+i_need_a_hobby@lucascharles.me?subject=i_need_a_hobby%20Submission"><i class="fa fa-envelope-o"></i> submit some hobbies</a> --
+                    <a href="http://github.com/theoretick/i_need_a_hobby">repo <i class="fa fa-github"></i></a>
                 </p>
             </div>
             <div class="col-md-1"></div>
@@ -50,32 +49,6 @@
 
     <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <!--<script type="text/javascript" src="../bower_components/tablesaw/dist/tablesaw.js"></script>-->
     <script type="text/javascript" src="../bower_components/datatables/media/js/jquery.dataTables.js"></script>
-
-    <script type="text/javascript">
-
-        var JSON_URL = 'https://gist.githubusercontent.com/theoretick/85ed91a97cf42d767410/raw/6e35dc36aecc74492b3a62727ca45d61248fd7ca/hobbies.json';
-
-        $.get(JSON_URL, function (data) {
-            all_hobbies = JSON.parse(data).hobbies;
-
-            for (var i = 0, j = all_hobbies.length; i < j; i++) {
-                var item = all_hobbies[i];
-                $('#hobby-list').append('<tr><td class="item-names">' +
-                                        item.name +
-                                        '</td><td class="item-tags">' +
-                                        (typeof(item.tags) !== 'undefined' ? item.tags : '') +
-                                        '</td><td class="item-notes">' +
-                                        (typeof(item.notes) !== 'undefined' ? item.notes : '') +
-                                        '</td></tr>' );
-            }
-
-            $('#hobby-list').DataTable( {
-                "paging":   false,
-                "ordering": true,
-                "info":     false
-            });
-        });
-    </script>
+    <script type="text/javascript" src="../javascripts/application.js"></script>
 </html>
