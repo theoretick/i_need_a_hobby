@@ -8,24 +8,50 @@
     </head>
     <body>
         <div class="container">
-            <h1><i class="fa fa-heart"></i> i need a hobby</h1>
-            <p>... and i haven't found one yet, so i made a tool to help me out</p>
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <h1><i class="fa fa-user-md"></i> i need a hobby</h1>
+                <p>... and i haven't found one yet, so i made a tool to help me out</p>
 
-            <table id="hobby-list" data-tablesaw-sortable>
-                <thead>
-                    <tr>
-                        <th data-tablesaw-sortable-col data-tablesaw-sortable-default-col>Name</th>
-                        <th data-tablesaw-sortable-col>Tags</th>
-                        <th data-tablesaw-sortable-col>Notes</th>
-                    </tr>
-                </thead>
-            </table>
+                <table id="hobby-list" class="compact hover order-column" data-tablesaw-sortable>
+                    <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>tags</th>
+                            <th>notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-1"></div>
+
         </div>
+        <footer class="footer">
+          <div class="container">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <br>
+                <p class="text-muted">
+                    Made with <i class="fa fa-heart"></i> in Portland.
+                </p>
+            </div>
+            <div class="col-md-5">
+                <br>
+                <p class="text-muted text-right">
+                    <a href="http://github.com/theoretick/i_need_a_hobby"><i class="fa fa-envelope-o"></i> submit some hobbies</a> --
+                    <a href="mailto:mail+i_need_a_hobby@lucascharles.me?subject=i_need_a_hobby%20Submission">repo <i class="fa fa-github"></i></a>
+                </p>
+            </div>
+            <div class="col-md-1"></div>
+        </footer>
     </body>
 
     <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../bower_components/tablesaw/dist/tablesaw.js"></script>
+    <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!--<script type="text/javascript" src="../bower_components/tablesaw/dist/tablesaw.js"></script>-->
+    <script type="text/javascript" src="../bower_components/datatables/media/js/jquery.dataTables.js"></script>
 
     <script type="text/javascript">
 
@@ -44,6 +70,12 @@
                                         (typeof(item.notes) !== 'undefined' ? item.notes : '') +
                                         '</td></tr>' );
             }
+
+            $('#hobby-list').DataTable( {
+                "paging":   false,
+                "ordering": true,
+                "info":     false
+            });
         });
     </script>
 </html>
