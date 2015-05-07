@@ -11,7 +11,7 @@ var config = {
 // AKA `bower install`
 gulp.task('bower', function() { 
     return bower()
-         .pipe(gulp.dest(config.bowerDir)) 
+         .pipe(gulp.dest('./public/javascripts')) ;
 });
 
 // install fontawesome icons from bower_components
